@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Dillon Garcia
+// dgarcia0562@csu.fullerton.edu
+// dgarcia0562
+// partner: audreythomas
 
 #include <iostream>
 #include <string>
@@ -7,25 +10,68 @@
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
 
-  // TODO: Validate that there is at least one command line argument.
-  // If not, print an error message and return a non-zero value.
+   if (arguments.size() == 4){ 
+     std::cout << "error: you must supply four arguments"; 
+     return 1; 
+   } 
 
-  // TODO: Write a for-each loop to sum (add up) all of the command line
-  // arguments.
-  // Use a double or float type so that your program preserves fractional
-  // values.
-  // The loop needs to skip over the command name, which is the first element
-  // of the arguments vector.
-  // Each argument is a std::string. You will need to convert each string into
-  // a number with the std::stod or std::stof function.
+   std::string street{arguments[1]}; 
 
-  // TODO: After the loop has finished summing the arguments, calculate the
-  // average of the values. Recall that the average is the total value divided
-  // by the number of values.
+   std::string day{arguments[2]}; 
 
-  // TODO: Use cout to print out a message of the form
-  // average = *AVERAGE*
-  // on its own line.
+   int hour{}; 
+   hour = std::stoi(arguments[3]); 
+
+   int minute{}; 
+   minute = std::stoi(arguments[4]);
+
+   if(street != "ash" && street != "beech" && street != "cedar" && street != "date" && street != "elm") { 
+     std::cout << "error: invalid street"; 
+     return 1; 
+   } 
+
+   if (day != "sun" && day != "mon" && day != "tue" && day != "wed" && day != "thu" && day != "fri" && day != "sat") { 
+     std::cout << "error: invalid day"; 
+     return 1; 
+   
+   }
+
+  if (hour < 1 (hour) > 24) { 
+     std::cout << "error: invalid hour"; 
+     return 1; 
+
+   } 
+
+  if (minute < 0 (minute) > 59) { 
+     std::cout << "error: invalid minute"; 
+     return 1; 
+
+   } 
+
+    bool parking{}; 
+
+   if (street == "ash"){ 
+   parking = ParkOnAsh(day, hour); 
+
+   } else if (street == "beech"){ 
+     parking = ParkOnBeech(day, hour); 
+
+   } else if (street == "Cedar"){ 
+     parking = ParkOnCedar(day, hour); 
+
+   } else if (street == "date"){ 
+     parking = ParkOnDate(day, hour, minute); 
+
+   } else if (street == "elm"){ 
+     parking = ParkonElm(day,hour, minute) 
+   }
+
+   if (parking == true){ 
+     std::cout << "allowed"; 
+
+   }else{ 
+     std::cout << "not allowed"; 
+   } 
 
   return 0;
 }
