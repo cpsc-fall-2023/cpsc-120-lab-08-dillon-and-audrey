@@ -1,7 +1,7 @@
-// Dillon Garcia
-// dgarcia0562@csu.fullerton.edu
-// dgarcia0562
-// partner: audreythomas
+// Audrey Thomas
+// audrey_thomas101@csu.fullerton.edu
+// @audreythomas
+// Partners: @audreythomas, @dgarcia05
 
 #include <iostream>
 #include <string>
@@ -11,16 +11,18 @@ int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
   if(arguments.size() != 4){
     std::cout << "error:"
-      << "you must supply three arguments\n";
-      return 1;
+              << "you must supply three arguments\n";
+    return 1;
   }
 
-std::string protein{arguments.at(1)};
-std::string bread{arguments.at(2)};
-std::string condiments{arguments.at(3)};
-std::cout << "Your order" ":\n"
-   << "A" <<protein<< "sandwich on" <<bread<< "with"
-   <<"condiment" <<"\n";
-   
+  std::string protein{arguments.at(1)};
+  std::string bread{arguments.at(2)};
+  std::string condiments{arguments.at(3)};
+  std::cout << "Your order"
+               ":\n"
+            << "A" << protein << "sandwich on" << bread << "with"
+            << "condiment"
+            << "\n";
+
   return 0;
 }
